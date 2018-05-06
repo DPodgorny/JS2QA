@@ -1,3 +1,5 @@
+// Using Array
+
 var Object = {
     parameter1 : 'value1',
     parameter2 : 'value2',
@@ -24,3 +26,22 @@ for (var key in Object)
 }
 
 console.log(Object);
+
+// Without ARRAY
+var Object = {
+    parameter1 : 'value1',
+    parameter2 : 'value2',
+    parameter3 : 'value3'
+};
+
+for (var key in Object)
+{
+    a = key;
+    b = Object[key];
+    delete Object[key];
+    key = b;
+    Object[key] = a;
+}
+
+console.log(Object);
+
