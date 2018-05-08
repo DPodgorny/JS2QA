@@ -1,14 +1,15 @@
-var TestObj = {
-    parameter1 : 'value1',
-    parameter2 : 'value2',
-    parameter3 : 'value3'};
+var testObj = {
+    parameter1: 'value1',
+    parameter2: 'value2',
+    parameter3: 'value3'};
 
-var TestObjNew = {};
+var testObjNew = {};
 
-for (var key in TestObj)
+for (var key in testObj)
 {
-    var a=TestObj[key];
-    TestObjNew[a] = key;
+    var a = testObj[key];
+    testObjNew[a] = key;
 }
-TestObj=TestObjNew;
+
+testObj = testObjNew;
 console.log(TestObj);
