@@ -12,4 +12,4 @@ for (var key in testObj)
 }
 
 testObj = testObjNew;
-console.log(TestObj);
+console.log(testObj);
