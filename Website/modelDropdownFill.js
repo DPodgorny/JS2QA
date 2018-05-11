@@ -1,5 +1,6 @@
 function fillModelTable(modelListLoad) {
 
+    document.getElementById('Model').innerHTML='';
     var model=[];
 
     switch (modelListLoad) {
@@ -18,6 +19,10 @@ function fillModelTable(modelListLoad) {
     }
 
     var modelDropdown = document.getElementById('Model');
+
+    var newEl = document.createElement('option');
+    newEl.value = '';
+    modelDropdown.add(newEl);
 
     for (var a = 0; a < model.length; a++) {
 
