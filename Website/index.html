@@ -8,12 +8,13 @@
     <title>Test Website</title>
     <script language="JavaScript" type="text/javascript" src="modelList.js"></script>
     <script language="JavaScript" type="text/javascript" src="modelDropdownFill.js"></script>
+    <script language="JavaScript" type="text/javascript" src="generateReport.js"></script>
 
 </head>
 
 <body>
 
-    <select onchange="fillModelTable(this.value)">
+    <select onchange="fillModelTable(this.value)" id="Manufacturer">
         <option></option>
         <option>Mercedes</option>
         <option>Toyota</option>
@@ -21,6 +22,8 @@
     </select>
 
     <select id="Model"></select>
+
+    <button onclick="generateReport()">Generate report</button>
 
 </body>
 
