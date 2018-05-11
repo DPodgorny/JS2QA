@@ -1,47 +1,63 @@
-Object1 = {
-    parameter1 : 2,
-    parameter2 : 3,
-    parameter3 : 4,
-}
+testObj1 = {
+    param1: 2,
+    param2: 3,
+    param3: 4
+};
 
-Object2 = {
-    parameter2 : 1,
-    parameter3 : 2,
-}
+testObj2 = {
+    param1: 1,
+    param2: 2
+};
 
-Object3 = {
-    a1 : 2,
-    a2 : 3,
-    a3 : 1,
-    a4 : 1,
-}
-var Array = [Object1, Object2, Object3];
+testObj3 = {
+    param1: 2,
+    param2: 3,
+    param3: 1,
+    param4: 1
+};
 
-var LengthArray = [];
+testObj4 = {
+    param1: 2,
+    param2: 3,
+    param3: 1
+};
 
-for (var e=0; e<Array.length; e++)
-{
-    var count=0;
-    for (var key in Array[e])
-    {
+testObj5 = {
+    param1: 2,
+    param2: 3,
+    param3: 1,
+    param4: 1,
+    param5: 3
+};
+
+var mainArr = [testObj1, testObj2, testObj3, testObj4, testObj5];
+
+var lengthArr = [];
+
+for (var a = 0; a < mainArr.length; a++) {
+    var count = 0;
+
+    for (var key in mainArr[a]) {
         count++;
     }
-    LengthArray[e]=count
+    lengthArr[a] = count;
 }
 
-for (var j=0; j<Array.length; j++)
-{
-    for(var i=0; i<Array.length; i++)
-    {
-        if (LengthArray[i]<LengthArray[i+1])
-        {
-            var temp=Array[i];
-            Array[i]=Array[i+1];
-            Array[i+1]=temp;
-            temp = LengthArray[i];
-            LengthArray[i] = LengthArray[i+1];
-            LengthArray[i+1] = temp;
+for (var b = 0; b < mainArr.length; b++) {
+
+    for (var c = 0; c < mainArr.length; c++) {
+
+        if (lengthArr[c] < lengthArr[c + 1]) {
+
+            var temp = mainArr[c];
+            mainArr[c] = mainArr[c + 1];
+            mainArr[c + 1] = temp;
+
+            temp = lengthArr[c];
+            lengthArr[c] = lengthArr[c + 1];
+            lengthArr[c + 1] = temp;
         }
     }
 }
-console.log(Array);
+
+console.log(mainArr);
