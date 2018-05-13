@@ -1,20 +1,20 @@
 function fillModelTable(modelListLoad) {
 
-    document.getElementById('Model').innerHTML='';
-    var model=[];
+    document.getElementById('Model').innerHTML = '';
+    var models = [];
 
     switch (modelListLoad) {
 
         case 'Mercedes':
-            model = modelListMerc;
+            models = modelListMerc;
             break;
 
         case 'Toyota':
-            model = modelListToyota;
+            models = modelListToyota;
             break;
 
         case 'Lada':
-            model = modelListLada;
+            models = modelListLada;
             break;
     }
 
@@ -24,11 +24,11 @@ function fillModelTable(modelListLoad) {
     newEl.value = '';
     modelDropdown.add(newEl);
 
-    for (var a = 0; a < model.length; a++) {
+    for (var a = 0; a < models.length; a++) {
 
         var newEl = document.createElement('option');
-        newEl.text = model[a];
-        newEl.value = model[a];
+        newEl.text = models[a];
+        newEl.value = models[a];
         modelDropdown.add(newEl);
     }
 }
