@@ -32,7 +32,7 @@ function generateReport() {
             tr.appendChild(td);
             td.appendChild(document.createTextNode(man));
 
-            var modelSorted = model.sort();
+            var modelSorted = models.sort();
 
             for (var a = 0; a < modelSorted.length; a++) {
 
@@ -67,7 +67,7 @@ function generateReport() {
         else {
 
             //Check wether is valid for specified manufacturer
-            var valueExist = model.includes(mod);
+            var valueExist = models.includes(mod);
             //if not
             if (valueExist === false) {
 
