@@ -1,7 +1,8 @@
+var model=[];
+
 function fillModelTable(modelListLoad) {
 
     document.getElementById('Model').innerHTML='';
-    var model=[];
 
     switch (modelListLoad) {
 
@@ -31,4 +32,10 @@ function fillModelTable(modelListLoad) {
         newEl.value = model[a];
         modelDropdown.add(newEl);
     }
+
+    //added model outside of array to check validation wether model belongs to manufacturer
+    var extEl = document.createElement('option');
+    extEl.text = 'Test';
+    extEl.value = 'Test to check validation';
+    modelDropdown.add(extEl);
 }
