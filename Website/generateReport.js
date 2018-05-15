@@ -12,25 +12,28 @@ function generateReport() {
     if (man === '') {
 
         tableDiv.appendChild(document.createTextNode('Please select a manufacturer'));
+        tableDiv.className = 'manError';
 
     }
 
     //if manufacturer selected, show model names and status
     else {
 
+        tableDiv.className = 'manSuccess';
         //if model not selected, show all models
         if (mod === '') {
 
             var table = document.createElement('table');
-            table.border = '3';
+            table.border = 1;
             var tr = document.createElement('tr');
-            var td = document.createElement('td');
+            var th = document.createElement('th');
+            th.colSpan = '2';
 
             //add manufacturer cell to the table
             tableDiv.appendChild(table);
             table.appendChild(tr);
-            tr.appendChild(td);
-            td.appendChild(document.createTextNode(man));
+            tr.appendChild(th);
+            th.appendChild(document.createTextNode(man));
 
             var modelSorted = models.sort();
 
@@ -41,9 +44,11 @@ function generateReport() {
 
                 if (modNameLength === 0) {
                     var modelStatus = 'Not Available';
+                    var styleAvailablity = 'styleNotAvailable';
                 }
                 else {
                     var modelStatus = 'Available';
+                    var styleAvailablity = 'styleAvailable';
                 }
 
                 //add row to the table for every model
@@ -59,6 +64,7 @@ function generateReport() {
                 td = document.createElement('td');
                 tr.appendChild(td);
                 td.appendChild(document.createTextNode(modelStatus));
+                td.className = styleAvailablity;
 
             }
         }
@@ -71,22 +77,24 @@ function generateReport() {
             //if not
             if (valueExist === false) {
 
-                tableDiv.appendChild(document.createTextNode('Specified model doesn\'t exist in the selected manufacturer'));
+                tableDiv.className = 'modError';
+                tableDiv.appendChild(document.createTextNode("Specified model doesn't exist in the selected manufacturer"));
 
             }
             //if yes
             else {
 
                 table = document.createElement('table');
-                table.border = '3';
+                table.border = 1;
                 tr = document.createElement('tr');
-                td = document.createElement('td');
+                th = document.createElement('th');
+                th.colSpan = '2';
 
                 //add manufacturer cell to the table
                 tableDiv.appendChild(table);
                 table.appendChild(tr);
-                tr.appendChild(td);
-                td.appendChild(document.createTextNode(man));
+                tr.appendChild(th);
+                th.appendChild(document.createTextNode(man));
 
                 //check status of the model, if name length even - unavailable, if not even - available
                 modNameLength = mod.length % 2;

@@ -9,21 +9,30 @@
     <script src="modelList.js"></script>
     <script src="modelDropdownFill.js"></script>
     <script src="generateReport.js"></script>
+    <link rel="stylesheet" type="text/css" href="Website.css"
 
 </head>
 
-<body>
+    <h2>Model Status App</h2>
 
-    <select onchange="fillModelTable(this.value)" id="Manufacturer">
-        <option></option>
-        <option>Mercedes</option>
-        <option>Toyota</option>
-        <option>Lada</option>
-    </select>
+    <div class="dropdowns">
 
-    <select id="Model"></select>
+        <select onchange="fillModelTable(this.value)" id="Manufacturer">
+            <option></option>
+            <option>Mercedes</option>
+            <option>Toyota</option>
+            <option>Lada</option>
+        </select>
 
-    <button onclick="generateReport()">Generate report</button>
+        <select id="Model"></select>
+
+    </div>
+
+    <p class="buttonP">
+
+        <button onclick="generateReport()">Generate report</button>
+
+    </p>
 
     <div id="tableDiv"></div>
 

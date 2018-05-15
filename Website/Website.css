@@ -1,0 +1,87 @@
+/*entire page style*/
+body {
+    background: azure;
+}
+
+/*page header style*/
+h2 {
+    margin-top: 15%;
+    color: darkgreen;
+    text-align: center;
+}
+
+/*dropdowns style*/
+.dropdowns {
+    text-align: center;
+}
+
+select {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border-color: black;
+    border-width: 2px;
+    font-style: italic;
+}
+
+
+/*button style*/
+.buttonP {
+    text-align: center;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    background: antiquewhite;
+}
+
+/*report table style*/
+table {
+    margin: auto;
+    border-width: 2px;
+    border-collapse: collapse;
+}
+
+.manError {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modError {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    font-size: 25px;
+    border-width: 2px;
+    height: 40px;
+}
+
+td {
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    border-width: 2px;
+    border-color: black;
+    width: 200px;
+    height: 30px;
+}
+
+.styleAvailable {
+    color: green;
+}
+
+.styleNotAvailable {
+    color: red;
+}
+
+
