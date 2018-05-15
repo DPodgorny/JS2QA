@@ -101,9 +101,11 @@ function generateReport() {
 
                 if (modNameLength === 0) {
                     var modelStatus = 'Not Available';
+                    var styleAvailablity = 'styleNotAvailable';
                 }
                 else {
                     var modelStatus = 'Available';
+                    var styleAvailablity = 'styleAvailable';
                 }
 
                 //add row to the table
@@ -119,6 +121,7 @@ function generateReport() {
                 td = document.createElement('td');
                 tr.appendChild(td);
                 td.appendChild(document.createTextNode(modelStatus));
+                td.className = styleAvailablity;
             }
         }
     }
