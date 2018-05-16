@@ -40,6 +40,8 @@ button {
 
 /*report table style*/
 table {
+    border-style: solid;
+    border-color: black;
     margin: auto;
     border-width: 2px;
     border-collapse: collapse;
@@ -60,6 +62,7 @@ table {
 }
 
 th {
+    border-style: solid;
     text-align: center;
     font-size: 25px;
     border-width: 2px;
@@ -67,6 +70,7 @@ th {
 }
 
 td {
+    border-style: solid;
     text-align: center;
     font-size: 20px;
     border-width: 2px;

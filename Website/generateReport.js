@@ -24,7 +24,6 @@ function generateReport() {
         if (mod === '') {
 
             var table = document.createElement('table');
-            table.border = 1;
             var tr = document.createElement('tr');
             var th = document.createElement('th');
             th.colSpan = '2';
@@ -85,7 +84,6 @@ function generateReport() {
             else {
 
                 table = document.createElement('table');
-                table.border = 1;
                 tr = document.createElement('tr');
                 th = document.createElement('th');
                 th.colSpan = '2';
