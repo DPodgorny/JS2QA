@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Test Website</title>
+    <script src="modelList.js"></script>
+    <script src="modelDropdownFill.js"></script>
+
+</head>
+
+<body>
+
+    <select onchange="fillModelTable(this.value)">
+        <option value="" selected hidden>Select Manufacturer</option>
+        <option>Mercedes</option>
+        <option>Toyota</option>
+        <option>Lada</option>
+    </select>
+
+    <select id="Model">
+        <option value='' selected hidden>Select Model</option>
+    </select>
+
+</body>
+
+</html>
