@@ -1,8 +1,8 @@
 function generateReport() {
 
     //get values of selected dropdowns
-    var man = document.getElementById('Manufacturer').value;
-    var mod = document.getElementById('Model').value;
+    var man = document.getElementById('manufacturer').value;
+    var mod = document.getElementById('model').value;
     var tableDiv = document.getElementById('tableDiv');
     tableDiv.innerHTML = '';
 

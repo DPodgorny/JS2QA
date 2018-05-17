@@ -2,7 +2,7 @@ var models = [];
 
 function fillModelTable(modelListLoad) {
 
-    var modelDropdown = document.getElementById('Model');
+    var modelDropdown = document.getElementById('model');
     modelDropdown.innerHTML = '';
 
     var newEl = document.createElement('option');

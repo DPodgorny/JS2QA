@@ -6,7 +6,7 @@ function fillTableMan(inputMan) {
 
     //add manufacturer cell to the table
     tableDiv.appendChild(table);
-    table.id = 'Table';
+    table.id = 'reportTable';
     table.appendChild(tr);
     tr.appendChild(td);
     td.appendChild(document.createTextNode(inputMan));
@@ -26,7 +26,7 @@ function fillTableMod(model) {
     }
 
     //add row to the table
-    var table = document.getElementById('Table');
+    var table = document.getElementById('reportTable');
     var tr = document.createElement('tr');
     table.append(tr);
 
