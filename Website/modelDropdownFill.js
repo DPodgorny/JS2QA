@@ -1,4 +1,4 @@
-var models=[];
+var models = [];
 
 function fillModelTable(modelListLoad) {
 

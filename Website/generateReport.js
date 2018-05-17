@@ -1,11 +1,10 @@
 function generateReport() {
 
-    document.getElementById('tableDiv').innerHTML='';
-
     //get values of selected dropdowns
     var man = document.getElementById('Manufacturer').value;
     var mod = document.getElementById('Model').value;
     var tableDiv = document.getElementById('tableDiv');
+    tableDiv.innerHTML = '';
 
 
     //error if manufacturer not selected, show error
@@ -22,7 +21,6 @@ function generateReport() {
         if (mod === '') {
 
             var table = document.createElement('table');
-            table.border = '3';
             var tr = document.createElement('tr');
             var td = document.createElement('td');
 
@@ -78,7 +76,6 @@ function generateReport() {
             else {
 
                 table = document.createElement('table');
-                table.border = '3';
                 tr = document.createElement('tr');
                 td = document.createElement('td');
 
