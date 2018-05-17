@@ -15,13 +15,15 @@
 <body>
 
     <select onchange="fillModelTable(this.value)" id="Manufacturer">
-        <option></option>
+        <option value="" selected hidden>Select Manufacturer</option>
         <option>Mercedes</option>
         <option>Toyota</option>
         <option>Lada</option>
     </select>
 
-    <select id="Model"></select>
+    <select id="Model">
+        <option value='' selected hidden>Select Model</option>
+    </select>
 
     <button onclick="generateReport()">Generate report</button>
 
