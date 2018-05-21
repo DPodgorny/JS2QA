@@ -1,19 +1,19 @@
-function fillTableMan(inputMan) {
+function addHeader(inputMan) {
 
     var table = document.createElement('table');
     var tr = document.createElement('tr');
     var td = document.createElement('td');
 
     //add manufacturer cell to the table
-    tableDiv.appendChild(table);
     table.id = 'reportTable';
     table.appendChild(tr);
     tr.appendChild(td);
     td.appendChild(document.createTextNode(inputMan));
+    tableDiv.appendChild(table);
 
 }
 
-function fillTableMod(model) {
+function addModelRow(model) {
 
     //check status of the model, if name length even - unavailable, if not even - available
     var modNameLength = model.length % 2;

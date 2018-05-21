@@ -15,14 +15,14 @@ function generateReport() {
     }
 
     //error if manufacturer not valid
-    if (manufacturerList.includes(man) === false) {
+    if (!manufacturerList.includes(man)) {
 
         tableDiv.appendChild(document.createTextNode('No data found'));
         return;
     }
 
     //if model not empty, check if model belongs to manufacturer
-    if (mod != '') {
+    if (mod !== '') {
 
         //error if model is not valid for manufacturer
         if (models.includes(mod) === false) {
@@ -36,14 +36,14 @@ function generateReport() {
     if (mod === '') {
 
         //Put table header with manufacturer
-        fillTableMan(man);
+        addHeader(man);
 
         var modelSorted = models.sort();
 
         for (var a = 0; a < modelSorted.length; a++) {
 
             //Put model and status to the table
-            fillTableMod(modelSorted[a]);
+            addModelRow(modelSorted[a]);
 
         }
         return;
@@ -53,9 +53,9 @@ function generateReport() {
     else {
 
         //Put table header with manufacturer
-        fillTableMan(man);
+        addHeader(man);
         //Put model and status to the table
-        fillTableMod(mod);
+        addModelRow(mod);
 
     }
 }
