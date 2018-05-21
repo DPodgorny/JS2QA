@@ -10,11 +10,7 @@ h2 {
     text-align: center;
 }
 
-/*dropdowns style*/
-.dropdowns {
-    text-align: center;
-}
-
+/*dropdown elements style*/
 select {
     width: 200px;
     height: 40px;
@@ -24,12 +20,7 @@ select {
     font-style: italic;
 }
 
-
 /*button style*/
-.buttonP {
-    text-align: center;
-}
-
 button {
     width: 200px;
     height: 40px;
@@ -47,20 +38,7 @@ table {
     border-collapse: collapse;
 }
 
-.manError {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.modError {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
+/*Table header style*/
 th {
     border-style: solid;
     text-align: center;
@@ -69,6 +47,7 @@ th {
     height: 40px;
 }
 
+/*Table row style*/
 td {
     border-style: solid;
     text-align: center;
@@ -79,10 +58,38 @@ td {
     height: 30px;
 }
 
+/*dropdowns style*/
+.dropdowns {
+    text-align: center;
+}
+
+/*button style*/
+.buttonParagraph {
+    text-align: center;
+}
+
+/*Manufacturer error message style*/
+.manError {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Model error message style*/
+.modError {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Available Status style*/
 .styleAvailable {
     color: green;
 }
 
+/*Not Available Status style*/
 .styleNotAvailable {
     color: red;
 }
