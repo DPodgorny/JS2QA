@@ -15,7 +15,7 @@ function addHeader(table, inputMan) {
     //add manufacturer cell to the table
     tr.appendChild(td);
     td.appendChild(document.createTextNode(inputMan));
-    table.appendChild(tr);
+    table.prepend(tr);
 
 }
 
