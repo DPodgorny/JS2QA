@@ -1,8 +1,16 @@
-var models=[];
+var models = [];
 
-function fillModelTable(modelListLoad) {
+function fillModelDropDown(modelListLoad) {
 
-    document.getElementById('Model').innerHTML = '';
+    var modelDropdown = document.getElementById('model');
+    modelDropdown.innerHTML = '';
+
+    var newEl = document.createElement('option');
+    newEl.text = 'Select Model';
+    newEl.value = '';
+    newEl.selected = 1;
+    //newEl.hidden = 1; Disabled to let user see all models when model not selected after generating report
+    modelDropdown.add(newEl);
 
     switch (modelListLoad) {
 
@@ -17,13 +25,11 @@ function fillModelTable(modelListLoad) {
         case 'Lada':
             models = modelListLada;
             break;
+
+        default:
+            return;
+
     }
-
-    var modelDropdown = document.getElementById('Model');
-
-    var newEl = document.createElement('option');
-    newEl.value = '';
-    modelDropdown.add(newEl);
 
     for (var a = 0; a < models.length; a++) {
 

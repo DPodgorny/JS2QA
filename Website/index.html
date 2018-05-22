@@ -2,29 +2,36 @@
 
 <html lang="en">
 
-<head>
+<link>
 
     <meta charset="UTF-8">
     <title>Test Website</title>
     <script src="modelList.js"></script>
     <script src="modelDropdownFill.js"></script>
     <script src="generateReport.js"></script>
-    <link rel="stylesheet" type="text/css" href="Website.css"
+    <script src="fillTableFunctions.js"></script>
+    <script src="validations.js"></script>
+    <link rel="stylesheet" type="text/css" href="Website.css">
 
 </head>
+
+<body>
 
     <h2>Model Status App</h2>
 
     <div class="dropdowns">
 
-        <select onchange="fillModelTable(this.value)" id="Manufacturer">
-            <option></option>
-            <option>Mercedes</option>
-            <option>Toyota</option>
-            <option>Lada</option>
-        </select>
+    <select onchange="fillModelDropDown(this.value)" id="manufacturer">
+        <option value="" selected hidden>Select Manufacturer</option>
+        <option>Mercedes</option>
+        <option>Toyota</option>
+        <option>Lada</option>
+        <option>Not valid for test</option>
+    </select>
 
-        <select id="Model"></select>
+    <select id="model">
+        <option value='' selected hidden>Select Model</option>
+    </select>
 
     </div>
 
