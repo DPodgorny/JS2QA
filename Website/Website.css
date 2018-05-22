@@ -12,7 +12,7 @@ h2 {
 
 /*dropdown elements style*/
 select {
-    width: 200px;
+    width: 250px;
     height: 40px;
     font-size: 20px;
     border-color: black;
@@ -68,16 +68,8 @@ td {
     text-align: center;
 }
 
-/*Manufacturer error message style*/
-.manError {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/*Model error message style*/
-.modError {
+/*error message style*/
+.error {
     color: red;
     font-size: 20px;
     font-weight: bold;
