@@ -1,12 +1,14 @@
 /*entire page style*/
 body {
-    background: azure;
+    background: url(background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 /*page header style*/
-h2 {
+h1 {
     margin-top: 15%;
-    color: darkgreen;
+    color: indigo;
     text-align: center;
 }
 
@@ -26,7 +28,8 @@ button {
     height: 40px;
     font-size: 17px;
     font-weight: bold;
-    background: antiquewhite;
+    background: coral;
+    border-radius: 50px;
 }
 
 /*report table style*/
@@ -36,6 +39,7 @@ table {
     margin: auto;
     border-width: 2px;
     border-collapse: collapse;
+    background: white;
 }
 
 /*Table header style*/
