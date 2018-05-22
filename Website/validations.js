@@ -13,7 +13,7 @@ function validate(man, mod){
     //if model not empty, check if model belongs to manufacturer
     if (mod !== '') {
         //return error if model is not valid for manufacturer
-        if (models.includes(mod) === false) {
+        if (!models.includes(mod)) {
 
             return "Specified model doesn't exist in the selected manufacturer";
         }
