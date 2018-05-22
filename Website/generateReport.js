@@ -27,23 +27,25 @@ function generateReport() {
         //error if model is not valid for manufacturer
         if (models.includes(mod) === false) {
 
-            tableDiv.appendChild(document.createTextNode('Specified model doesn\'t exist in the selected manufacturer'));
+            tableDiv.appendChild(document.createTextNode("Specified model doesn't exist in the selected manufacturer"));
             return;
         }
     }
+
+    var table = createTable(tableDiv);
 
     //if model empty, show all models
     if (mod === '') {
 
         //Put table header with manufacturer
-        addHeader(man);
+        addHeader(table, man);
 
         var modelSorted = models.sort();
 
         for (var a = 0; a < modelSorted.length; a++) {
 
             //Put model and status to the table
-            addModelRow(modelSorted[a]);
+            addModelRow(table, modelSorted[a]);
 
         }
         return;
@@ -53,9 +55,9 @@ function generateReport() {
     else {
 
         //Put table header with manufacturer
-        addHeader(man);
+        addHeader(table, man);
         //Put model and status to the table
-        addModelRow(mod);
+        addModelRow(table, mod);
 
     }
 }
