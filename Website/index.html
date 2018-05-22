@@ -8,21 +8,29 @@
     <title>Test Website</title>
     <script src="modelList.js"></script>
     <script src="modelDropdownFill.js"></script>
+    <script src="generateReport.js"></script>
+    <script src="fillTableFunctions.js"></script>
+    <script src="validations.js"></script>
 
 </head>
 
 <body>
 
-    <select onchange="fillModelTable(this.value)">
+    <select onchange="fillModelDropDown(this.value)" id="manufacturer">
         <option value="" selected hidden>Select Manufacturer</option>
         <option>Mercedes</option>
         <option>Toyota</option>
         <option>Lada</option>
+        <option>Not valid for test</option>
     </select>
 
-    <select id="Model">
+    <select id="model">
         <option value='' selected hidden>Select Model</option>
     </select>
+
+    <button onclick="generateReport()">Generate report</button>
+
+    <div id="tableDiv"></div>
 
 </body>
 
