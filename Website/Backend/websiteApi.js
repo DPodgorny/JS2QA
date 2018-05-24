@@ -29,15 +29,13 @@ http.createServer(function(req, res) {
                 break;
 
             default:
-                res.writeHead(200, {'Content-Type': 'text/html'});
-                res.end('Manufacturer is not valid');
-                return;
+                var responseObj = {'error': 'Manufacturer is not valid'};
+                break;
         }
     }
 
     else if (pathSplit[1] === 'status') {
 
-        console.log(pathSplit[2]);
         switch (pathSplit[2]) {
             case 'Mercedes':
                 var models = modelListMerc;
@@ -55,7 +53,7 @@ http.createServer(function(req, res) {
                 break;
 
             default:
-                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
                 res.end('Manufacturer is not valid');
                 return;
         }
@@ -96,13 +94,13 @@ http.createServer(function(req, res) {
     }
     else
     {
-        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
         res.end('Request is not valid');
         return;
     }
 
         var responseStr = JSON.stringify(responseObj);
 
-        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
         res.end(responseStr);
 }).listen(8080);
