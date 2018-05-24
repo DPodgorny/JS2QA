@@ -1,19 +1,25 @@
-function fillTableMan(inputMan) {
+function createTable(tableDiv) {
 
     var table = document.createElement('table');
+    table.id = 'reportTable';
+    tableDiv.appendChild(table);
+    return table;
+
+}
+
+function addHeader(table, inputMan) {
+
     var tr = document.createElement('tr');
     var td = document.createElement('td');
 
     //add manufacturer cell to the table
-    tableDiv.appendChild(table);
-    table.id = 'reportTable';
-    table.appendChild(tr);
     tr.appendChild(td);
     td.appendChild(document.createTextNode(inputMan));
+    table.prepend(tr);
 
 }
 
-function fillTableMod(model) {
+function addModelRow(table, model) {
 
     //check status of the model, if name length even - unavailable, if not even - available
     var modNameLength = model.length % 2;
@@ -26,9 +32,7 @@ function fillTableMod(model) {
     }
 
     //add row to the table
-    var table = document.getElementById('reportTable');
     var tr = document.createElement('tr');
-    table.append(tr);
 
     //fill model cell
     var td = document.createElement('td');
@@ -39,5 +43,7 @@ function fillTableMod(model) {
     var td = document.createElement('td');
     tr.appendChild(td);
     td.appendChild(document.createTextNode(modelStatus));
+
+    table.appendChild(tr);
 
 }

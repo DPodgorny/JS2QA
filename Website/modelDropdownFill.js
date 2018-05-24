@@ -1,6 +1,6 @@
 var models = [];
 
-function fillModelTable(modelListLoad) {
+function fillModelDropDown(modelListLoad) {
 
     var modelDropdown = document.getElementById('model');
     modelDropdown.innerHTML = '';

@@ -6,57 +6,38 @@ function generateReport() {
     var tableDiv = document.getElementById('tableDiv');
     tableDiv.innerHTML = '';
 
+    //get error message
+    var errorMessage = validate(man, mod);
 
-    //error if manufacturer not selected, show error
-    if (man === '') {
+    //if error message not null, show this message and stop function;
+    if (errorMessage != null) {
 
-        tableDiv.appendChild(document.createTextNode('Please select a manufacturer'));
+        tableDiv.appendChild(document.createTextNode(errorMessage));
         return;
     }
 
-    //error if manufacturer not valid
-    if (manufacturerList.includes(man) === false) {
-
-        tableDiv.appendChild(document.createTextNode('No data found'));
-        return;
-    }
-
-    //if model not empty, check if model belongs to manufacturer
-    if (mod != '') {
-
-        //error if model is not valid for manufacturer
-        if (models.includes(mod) === false) {
-
-            tableDiv.appendChild(document.createTextNode('Specified model doesn\'t exist in the selected manufacturer'));
-            return;
-        }
-    }
+    var table = createTable(tableDiv);
 
     //if model empty, show all models
     if (mod === '') {
-
-        //Put table header with manufacturer
-        fillTableMan(man);
 
         var modelSorted = models.sort();
 
         for (var a = 0; a < modelSorted.length; a++) {
 
             //Put model and status to the table
-            fillTableMod(modelSorted[a]);
-
+            addModelRow(table, modelSorted[a]);
         }
-        return;
     }
 
     //if model not empty, show specified model
     else {
 
-        //Put table header with manufacturer
-        fillTableMan(man);
         //Put model and status to the table
-        fillTableMod(mod);
-
+        addModelRow(table, mod);
     }
+
+    //Put table header with manufacturer
+    addHeader(table, man);
 }
 
