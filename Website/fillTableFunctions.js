@@ -10,11 +10,12 @@ function createTable(tableDiv) {
 function addHeader(table, inputMan) {
 
     var tr = document.createElement('tr');
-    var td = document.createElement('td');
+    var th = document.createElement('th');
+    th.colSpan = '2';
 
     //add manufacturer cell to the table
-    tr.appendChild(td);
-    td.appendChild(document.createTextNode(inputMan));
+    tr.appendChild(th);
+    th.appendChild(document.createTextNode(inputMan));
     table.prepend(tr);
 
 }
@@ -26,9 +27,11 @@ function addModelRow(table, model) {
 
     if (modNameLength === 0) {
         var modelStatus = 'Not Available';
+        var styleAvailablity = 'styleNotAvailable';
     }
     else {
         var modelStatus = 'Available';
+        var styleAvailablity = 'styleAvailable';
     }
 
     //add row to the table
@@ -43,6 +46,7 @@ function addModelRow(table, model) {
     var td = document.createElement('td');
     tr.appendChild(td);
     td.appendChild(document.createTextNode(modelStatus));
+    td.className = styleAvailablity;
 
     table.appendChild(tr);
 

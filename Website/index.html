@@ -11,24 +11,35 @@
     <script src="generateReport.js"></script>
     <script src="fillTableFunctions.js"></script>
     <script src="validations.js"></script>
+    <link rel="stylesheet" type="text/css" href="Website.css">
 
 </head>
 
 <body>
 
-    <select onchange="fillModelDropDown(this.value)" id="manufacturer">
-        <option value="" selected hidden>Select Manufacturer</option>
-        <option>Mercedes</option>
-        <option>Toyota</option>
-        <option>Lada</option>
-        <option>Not valid for test</option>
-    </select>
+    <h1>Model Status App</h1>
 
-    <select id="model">
-        <option value='' selected hidden>Select Model</option>
-    </select>
+    <div class="dropdowns">
 
-    <button onclick="generateReport()">Generate report</button>
+        <select onchange="fillModelDropDown(this.value)" id="manufacturer">
+            <option value="" selected hidden>Select Manufacturer</option>
+            <option>Mercedes</option>
+            <option>Toyota</option>
+            <option>Lada</option>
+            <option>Not valid for test</option>
+        </select>
+
+        <select id="model">
+            <option value='' selected hidden>Select Model</option>
+        </select>
+
+    </div>
+
+    <p class="buttonParagraph">
+
+        <button onclick="generateReport()">Generate report</button>
+
+    </p>
 
     <div id="tableDiv"></div>
 

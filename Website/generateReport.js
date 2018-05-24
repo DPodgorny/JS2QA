@@ -5,6 +5,7 @@ function generateReport() {
     var mod = document.getElementById('model').value;
     var tableDiv = document.getElementById('tableDiv');
     tableDiv.innerHTML = '';
+    document.getElementById('tableDiv').removeAttribute('class');
 
     //get error message
     var errorMessage = validate(man, mod);
@@ -13,6 +14,7 @@ function generateReport() {
     if (errorMessage != null) {
 
         tableDiv.appendChild(document.createTextNode(errorMessage));
+        tableDiv.className = 'error';
         return;
     }
 
