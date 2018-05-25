@@ -53,12 +53,12 @@ http.createServer(function(req, res) {
                 break;
 
             default:
+                var responseObj = {'error': 'Manufacturer is not valid'};
                 res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
-                res.end('Manufacturer is not valid');
+                res.end(responseObj);
                 return;
         }
 
-        console.log(models);
         if (pathSplit[3] === undefined)
         {
             var responseObj = {};
@@ -74,16 +74,22 @@ http.createServer(function(req, res) {
                 }
 
                 responseObj[models[a]] = modelStatus;
-                console.log(responseObj);
             }
         }
         else
         {
-            var modNameLength = pathSplit[3].length % 2;
-
-            if (modNameLength === 0) {
-                var modelStatus = 'Not Available';
+            if (!models.includes(pathSplit[3])) {
+                var responseObj = {'error': 'Model is not valid for manufacturer'};
+                res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
+                res.end(responseObj);
+                return;
             }
+            else {
+                var modNameLength = pathSplit[3].length % 2;
+
+                if (modNameLength === 0) {
+                    var modelStatus = 'Not Available';
+                }
             else {
                 var modelStatus = 'Available';
             }
