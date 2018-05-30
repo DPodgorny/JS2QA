@@ -13,6 +13,7 @@ function fillModelDropDown(modelListLoad) {
     newEl.selected = 1;
     //newEl.hidden = 1; Disabled to let user see all models when model not selected after generating report
     modelDropdown.add(newEl);
+
     var xmlHttp = new XMLHttpRequest();
 
     xmlHttp.open('GET', 'http://localhost:8080/models/'+modelListLoad, false);
@@ -21,7 +22,7 @@ function fillModelDropDown(modelListLoad) {
 
     if (responseObj.error === undefined) {
 
-        models = responseObj.models;
+        models = responseObj;
     }
     else {
 
