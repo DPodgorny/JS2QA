@@ -5,6 +5,7 @@ function generateReport() {
     var mod = document.getElementById('model').value;
     var tableDiv = document.getElementById('tableDiv');
     tableDiv.innerHTML = '';
+    document.getElementById('tableDiv').removeAttribute('class');
 
     //get response message
     var xmlHttp = new XMLHttpRequest();
@@ -16,6 +17,7 @@ function generateReport() {
     if (responseObj.error !== undefined) {
 
         tableDiv.appendChild(document.createTextNode(responseObj.error));
+        tableDiv.className = 'error';
         return;
     }
 

@@ -1,0 +1,93 @@
+/*entire page style*/
+body {
+    background: url(background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/*page header style*/
+h1 {
+    margin-top: 15%;
+    color: indigo;
+    text-align: center;
+}
+
+/*dropdown elements style*/
+select {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    border-color: black;
+    border-width: 2px;
+    font-style: italic;
+}
+
+/*button style*/
+button {
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    background: coral;
+    border-radius: 50px;
+}
+
+/*report table style*/
+table {
+    border-style: solid;
+    border-color: black;
+    margin: auto;
+    border-width: 2px;
+    border-collapse: collapse;
+    background: white;
+}
+
+/*Table header style*/
+th {
+    border-style: solid;
+    text-align: center;
+    font-size: 25px;
+    border-width: 2px;
+    height: 40px;
+}
+
+/*Table row style*/
+td {
+    border-style: solid;
+    text-align: center;
+    font-size: 20px;
+    border-width: 2px;
+    border-color: black;
+    width: 200px;
+    height: 30px;
+}
+
+/*dropdowns style*/
+.dropdowns {
+    text-align: center;
+}
+
+/*button style*/
+.buttonParagraph {
+    text-align: center;
+}
+
+/*error message style*/
+.error {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Available Status style*/
+.styleAvailable {
+    color: green;
+}
+
+/*Not Available Status style*/
+.styleNotAvailable {
+    color: red;
+}
+
+
