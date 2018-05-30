@@ -19,17 +19,7 @@ function addHeader(table, inputMan) {
 
 }
 
-function addModelRow(table, model) {
-
-    //check status of the model, if name length even - unavailable, if not even - available
-    var modNameLength = model.length % 2;
-
-    if (modNameLength === 0) {
-        var modelStatus = 'Not Available';
-    }
-    else {
-        var modelStatus = 'Available';
-    }
+function addModelRow(table, model, status) {
 
     //add row to the table
     var tr = document.createElement('tr');
@@ -42,7 +32,7 @@ function addModelRow(table, model) {
     //fill status cell
     var td = document.createElement('td');
     tr.appendChild(td);
-    td.appendChild(document.createTextNode(modelStatus));
+    td.appendChild(document.createTextNode(status));
 
     table.appendChild(tr);
 

@@ -48,6 +48,11 @@ function getModelList(requestedModel) {
             models = modelListLada;
             break;
 
+        case '':
+            models = {'error': 'Manufacturer is not selected'};
+            return models;
+            break;
+
         default:
             models = {'error': 'Manufacturer is not valid'};
             return models;
@@ -64,14 +69,16 @@ function getModelStatus(manufacturer, model) {
     var modelStatusList = {};
 
     //Check that manufacturer valid
-    if (!modelList.error === undefined)
+    if (modelList.error !== undefined)
     {
         return modelList;
     }
 
     //Model undefined - return all models
-    if (model === undefined)
+    if (model === '')
     {
+
+        modelStatusList['manufacturer'] = manufacturer;
 
         for (var a=0; a<modelList.length; a++) {
 
@@ -93,7 +100,7 @@ function getModelStatus(manufacturer, model) {
     //Model invalid - return error
     if (!modelList.includes(model)) {
 
-        modelStatusList = {'error': 'Model is not valid for manufacturer'};
+        modelStatusList = {'error': "Specified model doesn't exist in the selected manufacturer"};
         return modelStatusList;
     }
 
@@ -107,6 +114,7 @@ function getModelStatus(manufacturer, model) {
         var modelStatus = 'Available';
     }
 
+    modelStatusList['manufacturer'] = manufacturer;
     modelStatusList[model] = modelStatus;
 
     return modelStatusList;
