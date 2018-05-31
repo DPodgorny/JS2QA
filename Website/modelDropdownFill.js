@@ -4,6 +4,8 @@ function fillModelDropDown(modelListLoad) {
 
     var modelDropdown = document.getElementById('model');
     modelDropdown.innerHTML = '';
+    var btn = document.getElementById('genReportBtn');
+
 
     var newEl = document.createElement('option');
     newEl.text = 'Select Model';
@@ -12,23 +14,20 @@ function fillModelDropDown(modelListLoad) {
     //newEl.hidden = 1; Disabled to let user see all models when model not selected after generating report
     modelDropdown.add(newEl);
 
-    switch (modelListLoad) {
+    var xmlHttp = new XMLHttpRequest();
 
-        case 'Mercedes':
-            models = modelListMerc;
-            break;
+    xmlHttp.open('GET', 'http://localhost:8080/models/'+modelListLoad, false);
+    xmlHttp.send();
+    var responseObj = JSON.parse(xmlHttp.responseText);
 
-        case 'Toyota':
-            models = modelListToyota;
-            break;
+    if (responseObj.error === undefined) {
 
-        case 'Lada':
-            models = modelListLada;
-            break;
+        models = responseObj;
+    }
+    else {
 
-        default:
-            return;
-
+        console.log(responseObj.error);
+        return;
     }
 
     for (var a = 0; a < models.length; a++) {

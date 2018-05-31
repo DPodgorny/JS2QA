@@ -7,39 +7,34 @@ function generateReport() {
     tableDiv.innerHTML = '';
     document.getElementById('tableDiv').removeAttribute('class');
 
-    //get error message
-    var errorMessage = validate(man, mod);
+    //get response message
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open('GET', 'http://localhost:8080/status/'+man+'/'+mod, false);
+    xmlHttp.send();
+    var responseObj = JSON.parse(xmlHttp.responseText);
 
-    //if error message not null, show this message and stop function;
-    if (errorMessage != null) {
+    //get error message if presented
+    if (responseObj.error !== undefined) {
 
-        tableDiv.appendChild(document.createTextNode(errorMessage));
+        tableDiv.appendChild(document.createTextNode(responseObj.error));
         tableDiv.className = 'error';
         return;
     }
 
     var table = createTable(tableDiv);
 
-    //if model empty, show all models
-    if (mod === '') {
+    for (var key in responseObj) {
 
-        var modelSorted = models.sort();
+        if (key === 'manufacturer') {
 
-        for (var a = 0; a < modelSorted.length; a++) {
+            //Put table header with manufacturer
+            addHeader(table, responseObj.manufacturer);
+        }
+        else {
 
-            //Put model and status to the table
-            addModelRow(table, modelSorted[a]);
+            //Put model with status
+            addModelRow(table, key, responseObj[key]);
         }
     }
-
-    //if model not empty, show specified model
-    else {
-
-        //Put model and status to the table
-        addModelRow(table, mod);
-    }
-
-    //Put table header with manufacturer
-    addHeader(table, man);
 }
 
