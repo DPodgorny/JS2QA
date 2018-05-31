@@ -6,21 +6,22 @@ var modelListLada = ['110', 'Vesta', 'Largus', 'X-Ray'];
 
 function processRequest(path) {
 
-    //path[1] = requestType path[2] = manufacturer path[3] = model
-
     var responseObj;
+    var reqType = path[1];
+    var manufacturer = path[2];
+    var model = path[3];
 
     //Model list requested
-    if (path[1] === 'models') {
+    if (reqType === 'models') {
 
-        responseObj = getModelList(path[2]);
+        responseObj = getModelList(manufacturer);
         return responseObj;
     }
 
     //Model status requested
-    else if (path[1] === 'status') {
+    else if (reqType === 'status') {
 
-        responseObj = getModelStatus(path[2], path[3]);
+        responseObj = getModelStatus(manufacturer, model);
         return responseObj;
     }
 
