@@ -35,12 +35,14 @@ function requestStatus() {
     var man = document.getElementById('manufacturer').value;
     var mod = document.getElementById('model').value;
 
-    new Promise(function(res,rej) {
+    return new Promise(function (res) {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open('GET', 'http://localhost:8080/status/' + man + '/' + mod, true);
-        xmlHttp.onload = function () {
-            res(generateReport(JSON.parse(xmlHttp.responseText)))
-        };
-        xmlHttp.send();
+        xmlHttp.onload = function() {
 
-})}
+            res(JSON.parse(xmlHttp.responseText));
+        }
+
+        xmlHttp.send();
+    })
+}
