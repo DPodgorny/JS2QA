@@ -1,6 +1,6 @@
 var models = [];
 
-function fillModelDropDown(modelListLoad) {
+function fillModelDropDown(responseObj) {
 
     var modelDropdown = document.getElementById('model');
     modelDropdown.innerHTML = '';
@@ -14,11 +14,7 @@ function fillModelDropDown(modelListLoad) {
     //newEl.hidden = 1; Disabled to let user see all models when model not selected after generating report
     modelDropdown.add(newEl);
 
-    var xmlHttp = new XMLHttpRequest();
 
-    xmlHttp.open('GET', 'http://localhost:8080/models/'+modelListLoad, false);
-    xmlHttp.send();
-    var responseObj = JSON.parse(xmlHttp.responseText);
 
     if (responseObj.error === undefined) {
 
@@ -43,4 +39,19 @@ function fillModelDropDown(modelListLoad) {
     extEl.text = 'Test';
     extEl.value = 'Test to check validation';
     modelDropdown.add(extEl);
+}
+
+function requestModels(manufacturer) {
+
+    var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open('GET', 'http://localhost:8080/models/' + manufacturer, true);
+
+    xmlHttp.onload = function () {
+
+                var responseObj = JSON.parse(xmlHttp.responseText);
+                fillModelDropDown(responseObj);
+    }
+
+    xmlHttp.send();
 }
