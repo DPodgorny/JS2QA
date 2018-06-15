@@ -17,31 +17,31 @@
 
 <body>
 
-    <h1>Model Status App</h1>
+<h1>Model Status App</h1>
 
-    <div class="dropdowns">
+<div class="dropdowns">
 
-        <select onchange="fillModelDropDown(this.value)" id="manufacturer">
-            <option value="" selected hidden>Select Manufacturer</option>
-            <option>Mercedes</option>
-            <option>Toyota</option>
-            <option>Lada</option>
-            <option>Not valid for test</option>
-        </select>
+    <select onchange="requestModels(this.value)" id="manufacturer">
+        <option value="" selected hidden>Select Manufacturer</option>
+        <option>Mercedes</option>
+        <option>Toyota</option>
+        <option>Lada</option>
+        <option>Not valid for test</option>
+    </select>
 
-        <select id="model">
-            <option value='' selected hidden>Select Model</option>
-        </select>
+    <select id="model">
+        <option value='' selected hidden>Select Model</option>
+    </select>
 
-    </div>
+</div>
 
-    <p class="buttonParagraph">
+<p class="buttonParagraph">
 
-        <button onclick="generateReport()">Generate report</button>
+    <button onclick="requestStatus()">Generate report</button>
 
-    </p>
+</p>
 
-    <div id="tableDiv"></div>
+<div id="tableDiv"></div>
 
 </body>
 

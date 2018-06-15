@@ -1,17 +1,8 @@
-function generateReport() {
+function generateReport(responseObj) {
 
-    //get values of selected dropdowns
-    var man = document.getElementById('manufacturer').value;
-    var mod = document.getElementById('model').value;
     var tableDiv = document.getElementById('tableDiv');
     tableDiv.innerHTML = '';
     document.getElementById('tableDiv').removeAttribute('class');
-
-    //get response message
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open('GET', 'http://localhost:8080/status/'+man+'/'+mod, false);
-    xmlHttp.send();
-    var responseObj = JSON.parse(xmlHttp.responseText);
 
     //get error message if presented
     if (responseObj.error !== undefined) {
@@ -38,3 +29,15 @@ function generateReport() {
     }
 }
 
+function requestStatus() {
+
+    //get values of selected dropdowns
+    var man = document.getElementById('manufacturer').value;
+    var mod = document.getElementById('model').value;
+
+    fetch('http://localhost:8080/status/' + man + '/' + mod)
+        .then(function (res){return res.json()})
+        .then(generateReport)
+
+
+}
